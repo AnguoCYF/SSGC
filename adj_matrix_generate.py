@@ -79,9 +79,6 @@ def generate_cosine_similarity_matrix(features, quantile=75):
     adjacency_matrix = (similarity_matrix >= threshold).astype(float)
     np.fill_diagonal(adjacency_matrix, 0)
 
-    adjacency_matrix = (similarity_matrix >= threshold).astype(float)
-    np.fill_diagonal(adjacency_matrix, 0)
-
     # 转换为对称矩阵
     adjacency_matrix = adjacency_matrix + adjacency_matrix.T
     adjacency_matrix[adjacency_matrix > 1] = 1  # 确保连接权重为 1
